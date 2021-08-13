@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -118,8 +118,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7df60baa10938454bb9aed2801825d77
-      internalID: -1714542443
+      spriteID: 799183a2db0b0ea48a61dca5567bb36a
+      internalID: -1684116517
       vertices: []
       indices: 
       edges: []
@@ -139,8 +139,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9356126ffba995043b173eb6d4381718
-      internalID: -1735720224
+      spriteID: d37eb4c09f0568c41951b53db9669e9e
+      internalID: 1484406182
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87f0e6126647fb8448f5bd2a3b756542
-      internalID: -521974071
+      spriteID: ff484e26ff85994468b582e57b07f334
+      internalID: -999063195
       vertices: []
       indices: 
       edges: []
@@ -181,8 +181,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee3f182a2127e004eaa9c56d794e7718
-      internalID: 1836387397
+      spriteID: 4e51fe8beb54c9d40b75fa5a48155c09
+      internalID: -1178054418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Animation_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a0fd0e0234fa0c4ca1a292e6ddbd6f0
+      internalID: 1002014703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Animation_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9131d8b5a2f58c34eb59a44ae16b87f1
+      internalID: 1415448551
       vertices: []
       indices: 
       edges: []
@@ -198,10 +240,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Crab_Animation_0: -1714542443
-      Crab_Animation_3: 1836387397
-      Crab_Animation_1: -1735720224
-      Crab_Animation_2: -521974071
+      Crab_Animation_0: -1684116517
+      Crab_Animation_5: 1415448551
+      Crab_Animation_4: 1002014703
+      Crab_Animation_3: -1178054418
+      Crab_Animation_1: 1484406182
+      Crab_Animation_2: -999063195
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
