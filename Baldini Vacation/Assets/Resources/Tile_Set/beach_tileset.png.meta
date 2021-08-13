@@ -48,6 +48,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -292,6 +293,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      beach_tileset_0: 2390654581710173712
+      beach_tileset_1: 1302000718529895404
+      beach_tileset_2: 564749503989927479
+      beach_tileset_7: -5084577343996683202
+      beach_tileset_3: 3587331103506707302
+      beach_tileset_4: 7653711464011248930
+      beach_tileset_6: -6380697876175472039
+      beach_tileset_5: -7933100305454659720
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
