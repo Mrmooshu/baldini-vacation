@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4c3dbf4b0597ff84daccce1cbb3de1b7
+guid: e8c34a4eab59f5044a014416479a9ac5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Monkey_Die_0
+      name: monkey_die 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,41 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 263694bdff568d749a3565796313222a
-      internalID: -1195867266
+      spriteID: 97ea92e57c9475f4c9704f69321b5197
+      internalID: 637220621
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monkey_Die_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 778a5068f2067b34196fedb1b6efe186
-      internalID: -637433878
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Monkey_Die_2
+      name: monkey_die 1_1
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bea55b676ca422b44bba7b0fb0651ebb
-      internalID: 5525670
+      spriteID: fd65e3888a1221244b51e4b7922c273e
+      internalID: 919372838
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monkey_Die_3
+      name: monkey_die 1_2
       rect:
         serializedVersion: 2
-        x: 96
+        x: 128
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,8 +160,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 551597867a00a914d8d03640f2804635
-      internalID: -619325064
+      spriteID: f79b52f1077dfcc4aa457ccf6dec54f8
+      internalID: -1537690241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die 1_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab8cfe9acf7ee3c4292df8d48b415b68
+      internalID: -1515547668
       vertices: []
       indices: 
       edges: []
@@ -198,10 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Monkey_Die_1: -637433878
-      Monkey_Die_2: 5525670
-      Monkey_Die_3: -619325064
-      Monkey_Die_0: -1195867266
+      monkey_die 1_2: -1537690241
+      monkey_die 1_1: 919372838
+      monkey_die 1_0: 637220621
+      monkey_die 1_3: -1515547668
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

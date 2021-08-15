@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 664e463f46d341b4ba7517437afd3129
+guid: 20e850aba5eba0e4b8c6dc4a5558cca5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Monkey_Idle_0
+      name: monkey_shoot 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 48
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dee8e0e8efafa3e44b6b099a81f55879
-      internalID: 1494164907
+      spriteID: 452270dfc04614b4e83638d58f1e1949
+      internalID: -1700065514
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monkey_Idle_1
+      name: monkey_shoot 1_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 64
         y: 0
-        width: 48
-        height: 48
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,50 +139,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0dac8874611d6d440b9db935bdb059f4
-      internalID: 713450429
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Monkey_Idle_2
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 49f802e458be1f640953e5af5cf2f0a7
-      internalID: -1858745796
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Monkey_Idle_3
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: af2a6a279ebc3354cbd4b7f7aade720f
-      internalID: 1172891501
+      spriteID: 372a0115d354fc048b6a808903302972
+      internalID: 1630103074
       vertices: []
       indices: 
       edges: []
@@ -198,10 +156,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Monkey_Idle_3: 1172891501
-      Monkey_Idle_2: -1858745796
-      Monkey_Idle_0: 1494164907
-      Monkey_Idle_1: 713450429
+      monkey_shoot 1_1: 1630103074
+      monkey_shoot 1_0: -1700065514
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
