@@ -1,22 +1,7 @@
 fileFormatVersion: 2
-guid: 9226d76fc104a5b4e9bf0eea2aaaa42e
+guid: ada313d15411e4c4f9844892ce87e72b
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -1516387744112839604
-    second: Idle_Animation_0
-  - first:
-      213: -8026313669228311977
-    second: Idle_Animation_1
-  - first:
-      213: -5917169234700195435
-    second: Idle_Animation_2
-  - first:
-      213: -6691756239288349784
-    second: Idle_Animation_3
-  - first:
-      213: 5466040871787345658
-    second: Idle_Animation_4
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -96,7 +81,19 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -107,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_Animation_0
+      name: Monkey_Idle 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,41 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c44f5628165b4fae0800000000000000
-      internalID: -1516387744112839604
+      spriteID: 0049cb5bef6cb1749b377bca92c42c86
+      internalID: -1769492614
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_Animation_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 75ac8c93e3ecc9090800000000000000
-      internalID: -8026313669228311977
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle_Animation_2
+      name: Monkey_Idle 1_1
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,41 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59923d97eedf1eda0800000000000000
-      internalID: -5917169234700195435
+      spriteID: f28d12ebd9d1e8842b4bd892308fa6fe
+      internalID: 1076955335
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_Animation_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8abc6b1a72b1223a0800000000000000
-      internalID: -6691756239288349784
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle_Animation_4
+      name: Monkey_Idle 1_2
       rect:
         serializedVersion: 2
         x: 128
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,8 +160,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af6b6aa66374bdb40800000000000000
-      internalID: 5466040871787345658
+      spriteID: 30e4dce1b9d5f6c478d87664a9beda81
+      internalID: -1455635691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monkey_Idle 1_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ead2e31c23cbbe44b95deaf6f8af17f1
+      internalID: -1433808948
       vertices: []
       indices: 
       edges: []
@@ -222,11 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle_Animation_4: 5466040871787345658
-      Idle_Animation_1: -8026313669228311977
-      Idle_Animation_0: -1516387744112839604
-      Idle_Animation_3: -6691756239288349784
-      Idle_Animation_2: -5917169234700195435
+      Monkey_Idle 1_3: -1433808948
+      Monkey_Idle 1_0: -1769492614
+      Monkey_Idle 1_1: 1076955335
+      Monkey_Idle 1_2: -1455635691
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

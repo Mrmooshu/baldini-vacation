@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0ea214cdfa6102d4cb2d55674dfc2278
+guid: 3ad7064f9e2466a4cbc78e8fd2d6913a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Monkey_Run_0
+      name: baldini_run_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 48
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 857f8afdc2e7ce54b98344f9753b8d3c
-      internalID: 1031259012
+      spriteID: 2d1b7987b0d389a49b036bf0335ebbb3
+      internalID: 1976643127
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monkey_Run_1
+      name: baldini_run_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 64
         y: 0
-        width: 48
-        height: 48
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a84909ba8852ccd45868d182f410c839
-      internalID: -1320069868
+      spriteID: 78477ded752219c4cb6aa6a0badb4c0b
+      internalID: -160027381
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monkey_Run_2
+      name: baldini_run_2
       rect:
         serializedVersion: 2
-        x: 96
+        x: 128
         y: 0
-        width: 48
-        height: 48
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a48cab1b1ee966b45a9861a9554db131
-      internalID: 886616367
+      spriteID: cdc7a86c009572c498a190be3bc6d755
+      internalID: 2068859394
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monkey_Run_3
+      name: baldini_run_3
       rect:
         serializedVersion: 2
-        x: 144
+        x: 192
         y: 0
-        width: 48
-        height: 48
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,8 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b37c69600a56fa43a0d9cff78fdeb08
-      internalID: -1389087377
+      spriteID: 94587470e51719e4fb1a6912f93e1872
+      internalID: 933766799
       vertices: []
       indices: 
       edges: []
@@ -198,10 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Monkey_Run_0: 1031259012
-      Monkey_Run_1: -1320069868
-      Monkey_Run_3: -1389087377
-      Monkey_Run_2: 886616367
+      baldini_run_1: -160027381
+      baldini_run_0: 1976643127
+      baldini_run_3: 933766799
+      baldini_run_2: 2068859394
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
