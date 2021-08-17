@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShootingItem : MonoBehaviour
 {
     public float speed;
+    public float damage;
 
     public void Update()
     {
@@ -13,14 +14,18 @@ public class ShootingItem : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Enemy")
+        {
+            float[] attackDetails = new float[2];
+            attackDetails[0] = damage;
+            attackDetails[1] = transform.position.x;
+            collision.transform.parent.SendMessage("Damage", attackDetails);
+            Destroy(gameObject);
+        }
+        else if (collision.tag == "Player")
         {
             return;
         }
-
-        if (collision.GetComponent<ShootingAction>())
-        collision.GetComponent<ShootingAction>().Action();
-
         Destroy(gameObject);
     }
 }

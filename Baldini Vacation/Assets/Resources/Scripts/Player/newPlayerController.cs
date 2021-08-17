@@ -284,7 +284,7 @@ public class newPlayerController : MonoBehaviour
         if(jumpTimer > 0)
         {
             //WallJump
-            if (!isGrounded && isWallSliding && movementInputDirection != 0 && movementInputDirection != facingDirection)
+            if (!isGrounded && isWallSliding)
             {
                 WallJump();
             }
@@ -334,21 +334,21 @@ public class newPlayerController : MonoBehaviour
 
     private void WallJump()
     {
-            rb.velocity = new Vector2(rb.velocity.x, 0.0f);
-            isWallSliding = false;
-            amountOfJumpsLeft = amountOfJumps;
-            amountOfJumpsLeft--;
-            Vector2 forceToAdd = new Vector2(wallJumpForce * facingDirection*.5f, wallJumpForce * 1.5f);
-            rb.AddForce(forceToAdd, ForceMode2D.Impulse);
-            jumpTimer = 0;
-            isAttemptingToJump = false;
-            checkJumpMultiplier = true;
-            turnTimer = 0;
-            canMove = true;
-            canFlip = true;
-            hasWallJumped = true;
-            wallJumpTimer = wallJumpTimerSet;
-            lastWallJumpDirection = -facingDirection;
+        rb.velocity = new Vector2(rb.velocity.x, 0.0f);
+        isWallSliding = false;
+        amountOfJumpsLeft = amountOfJumps;
+        amountOfJumpsLeft--;
+        Vector2 forceToAdd = new Vector2(wallJumpForce * facingDirection * .5f, wallJumpForce * 1.5f);
+        rb.AddForce(forceToAdd, ForceMode2D.Impulse);
+        jumpTimer = 0;
+        isAttemptingToJump = false;
+        checkJumpMultiplier = true;
+        turnTimer = 0;
+        canMove = true;
+        canFlip = true;
+        hasWallJumped = true;
+        wallJumpTimer = wallJumpTimerSet;
+        lastWallJumpDirection = -facingDirection;
     }
 
     private void ApplyMovement()

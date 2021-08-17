@@ -34,7 +34,8 @@ public class BasicEnemyController : MonoBehaviour
 
     private float
         currentHealth,
-        knockbackStartTime;
+        knockbackStartTime,
+        deathAnimationTimer;
 
     private int
         facingDirection,
@@ -48,12 +49,16 @@ public class BasicEnemyController : MonoBehaviour
 
     private GameObject alive;
     private Rigidbody2D aliveRb;
+    private BoxCollider2D aliveBox;
+    private CircleCollider2D aliveCircle;
     private Animator aliveAnim;
 
     private void Start()
     {
         alive = transform.Find("Alive").gameObject;
         aliveRb = alive.GetComponent<Rigidbody2D>();
+        aliveBox = alive.GetComponent<BoxCollider2D>();
+        aliveCircle = alive.GetComponent<CircleCollider2D>();
         aliveAnim = alive.GetComponent<Animator>();
 
         currentHealth = maxHealth;
@@ -132,13 +137,22 @@ public class BasicEnemyController : MonoBehaviour
 
     private void EnterDeadState()
     {
-      
-        Destroy(gameObject);
+        aliveAnim.SetBool("Dead", true);
+        deathAnimationTimer = 4;
+        aliveBox.enabled = false;
+        aliveCircle.enabled = false;
+        Vector2 forceToAdd = new Vector2(0, 5);
+        aliveRb.AddForce(forceToAdd, ForceMode2D.Impulse);
+        aliveRb.gravityScale *= .5f;
     }
 
     private void UpdateDeadState()
     {
-
+        deathAnimationTimer -= Time.deltaTime;
+        if (deathAnimationTimer <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void ExitDeadState()
