@@ -236,6 +236,11 @@ public class newPlayerController : MonoBehaviour
         lastImageXpos = transform.position.x;
     }    
 
+
+    public int GetFacingDirection()
+    {
+        return facingDirection;
+    }
     private void CheckDash()
     {
         if(isDashing)
@@ -322,7 +327,7 @@ public class newPlayerController : MonoBehaviour
             isWallSliding = false;
             amountOfJumpsLeft = amountOfJumps;
             amountOfJumpsLeft--;
-            Vector2 forceToAdd = new Vector2(wallJumpForce * facingDirection*.5f, wallJumpForce);
+            Vector2 forceToAdd = new Vector2(wallJumpForce * facingDirection*.5f, wallJumpForce * 1.5f);
             rb.AddForce(forceToAdd, ForceMode2D.Impulse);
             jumpTimer = 0;
             isAttemptingToJump = false;

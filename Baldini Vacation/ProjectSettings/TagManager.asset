@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -11,12 +12,12 @@ TagManager:
   - 
   - Water
   - UI
-  - Player
+  - BackGround Scenery
   - 'ForeGround Scenery '
   - Stage
-  - BackGround Scenery
-  - 
-  - 
+  - Damageable
+  - Dead
+  - Player
   - 
   - 
   - 
@@ -41,6 +42,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Player
+  - name: Background
     uniqueID: 1378314931
+    locked: 0
+  - name: Decoration
+    uniqueID: 3747327181
+    locked: 0
+  - name: Platforms
+    uniqueID: 1742624087
+    locked: 0
+  - name: Enemy
+    uniqueID: 1466652539
+    locked: 0
+  - name: Player
+    uniqueID: 3030144387
+    locked: 0
+  - name: Foreground Decoration
+    uniqueID: 2666156833
     locked: 0
