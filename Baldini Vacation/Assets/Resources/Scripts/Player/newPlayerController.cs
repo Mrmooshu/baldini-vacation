@@ -10,6 +10,7 @@ public class newPlayerController : MonoBehaviour
     private float turnTimer;
     private float wallJumpTimer;
     private float dashTimeLeft;
+    private float shotRecentlyTimer;
     private float lastImageXpos;
     private float lastDash = -100f;
 
@@ -170,6 +171,7 @@ public class newPlayerController : MonoBehaviour
         anim.SetBool("isGrounded", isGrounded);
         anim.SetFloat("yVelocity", rb.velocity.y);
         anim.SetBool("isWallSliding", isWallSliding);
+        anim.SetFloat("shotRecently", shotRecentlyTimer);
     }
 
 
@@ -222,6 +224,15 @@ public class newPlayerController : MonoBehaviour
         {
             if (Time.time >= (lastDash + dashCoolDown))
                 AttemptToDash();
+        }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            shotRecentlyTimer = .3f;
+        }
+        if (shotRecentlyTimer > 0)
+        {
+            shotRecentlyTimer -= Time.deltaTime;
         }
 
     }
