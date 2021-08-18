@@ -6,10 +6,20 @@ public class ShootingItem : MonoBehaviour
 {
     public float speed;
     public float damage;
+    private GameObject player;
+
+    public void Start()
+    {
+        player = GameObject.Find("Player");
+    }
 
     public void Update()
     {
         transform.Translate(transform.right * transform.localScale.x * speed * Time.deltaTime);
+        if (Vector2.Distance(player.transform.position, transform.position) > 30)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

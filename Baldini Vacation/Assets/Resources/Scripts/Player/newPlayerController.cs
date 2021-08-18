@@ -196,6 +196,7 @@ public class newPlayerController : MonoBehaviour
         anim.SetFloat("yVelocity", rb.velocity.y);
         anim.SetBool("isWallSliding", isWallSliding);
         anim.SetFloat("shotRecently", shotRecentlyTimer);
+        anim.SetBool("inHitStun", knockback);
     }
 
 
