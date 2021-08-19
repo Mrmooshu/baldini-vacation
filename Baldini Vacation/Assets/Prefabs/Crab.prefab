@@ -71,7 +71,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7820615724250075594}
-  - component: {fileID: 7820615724250075595}
   m_Layer: 0
   m_Name: Crab
   m_TagString: Untagged
@@ -95,39 +94,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7820615724250075595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7820615724250075592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fb77c2265fbeb540bc2ce98d2bcd0ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundCheckDistance: 0.33
-  wallCheckDistance: 0.2
-  movementSpeed: 2
-  maxHealth: 50
-  knockbackDuration: 0.1
-  lastTouchDamageTime: 0
-  touchDamageCooldown: 0.2
-  touchDamage: 10
-  touchDamageWidth: 0.82
-  touchDamageHeight: 0.67
-  groundCheck: {fileID: 7820615724795902751}
-  wallCheck: {fileID: 7820615723729044495}
-  touchDamageCheck: {fileID: 7820615723649041780}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 256
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 2048
-  knockbackSpeed: {x: 10, y: 5}
-  hitParticle: {fileID: 7877194963626030074, guid: 45a29dfcf66fbf845ac58ae28585c1e3, type: 3}
 --- !u!1 &7820615724560942134
 GameObject:
   m_ObjectHideFlags: 0
