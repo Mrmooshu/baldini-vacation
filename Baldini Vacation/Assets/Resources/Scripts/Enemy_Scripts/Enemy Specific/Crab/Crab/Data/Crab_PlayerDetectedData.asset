@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4830e35ff89e5644a3ad93abc1be9bd, type: 3}
   m_Name: Crab_PlayerDetectedData
   m_EditorClassIdentifier: 
+  longRangeActionTime: 0.5
