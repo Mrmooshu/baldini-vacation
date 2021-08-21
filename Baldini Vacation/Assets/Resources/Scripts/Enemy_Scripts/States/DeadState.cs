@@ -18,4 +18,14 @@ public class DeadState : State
 
         //entity.gameObject.SetActive(false);
     }
+
+    /*public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+
+        if(stateData.deathTimer <= 0)
+        {
+            entity.gameObject.SetActive(false);
+        }
+    } */
 }

@@ -15,13 +15,14 @@ MonoBehaviour:
   maxHealth: 30
   damageHopSpeed: 10
   wallCheckDistance: 0.2
-  ledgeCheckDistance: 0.4
+  ledgeCheckDistance: 1
   groundCheckRadius: 0.3
   maxAgroDistance: 4
   minAgroDistance: 3
   stunResistance: 3
   stunRecoveryTime: 2
   closeRangeActionDistance: 1
+  hitParticle: {fileID: 7877194963626030074, guid: 3e7771d69bde1324a985b90972df42fb, type: 3}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256

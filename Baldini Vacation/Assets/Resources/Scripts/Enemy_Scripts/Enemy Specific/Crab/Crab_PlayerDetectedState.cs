@@ -28,7 +28,11 @@ public class Crab_PlayerDetectedState : PlayerDetectedState
         {
             enemy.stateMachine.ChangeState(enemy.lookForPlayerState);
         }
-
+        else if(isDetectingLedge)
+        {
+            entity.Flip();
+            enemy.stateMachine.ChangeState(enemy.moveState);
+        }
     }
 
     public override void PhysicsUpdate()

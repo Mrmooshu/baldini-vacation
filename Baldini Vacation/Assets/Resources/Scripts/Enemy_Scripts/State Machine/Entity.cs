@@ -52,6 +52,8 @@ public class Entity : MonoBehaviour
     {
         stateMachine.currentState.LogicUpdate();
 
+        anim.SetFloat("yVelocity", rb.velocity.y);
+
         if(Time.time >= lastDamageTime + entityData.stunRecoveryTime)
         {
             ResetStunResistance();
@@ -126,6 +128,7 @@ public class Entity : MonoBehaviour
         currentStunResistance -= attackDetails.stunDamageAmount;
 
         DamageHop(entityData.damageHopSpeed);
+        Instantiate(entityData.hitParticle, aliveGO.transform.position, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
 
         if(attackDetails.position.x > aliveGO.transform.position.x)
         {

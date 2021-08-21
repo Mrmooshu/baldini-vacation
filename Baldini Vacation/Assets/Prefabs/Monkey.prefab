@@ -152,7 +152,7 @@ Animator:
   m_GameObject: {fileID: 2004697261495375188}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 18cfc95e4148e4f45a0dca4d80beb6f2, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -244,7 +244,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2004697262225260659}
-  - component: {fileID: 2004697262225260658}
   m_Layer: 0
   m_Name: Monkey
   m_TagString: Untagged
@@ -268,27 +267,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2004697262225260658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2004697262225260656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5251f27e7b2b293478405fa9431022fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundCheckDistance: 0.53
-  wallCheckDistance: 0.14
-  movementSpeed: 3
-  maxHealth: 30
-  knockbackDuration: 0.1
-  groundCheck: {fileID: 2004697260793188499}
-  wallCheck: {fileID: 2004697261567403706}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 256
-  knockbackSpeed: {x: 10, y: 5}
-  hitParticle: {fileID: 7877194963626030074, guid: 45a29dfcf66fbf845ac58ae28585c1e3, type: 3}
