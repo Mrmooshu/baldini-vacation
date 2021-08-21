@@ -11,7 +11,7 @@ public class ChargeState : State
     protected bool isDetectingWall;
     protected bool isChargeTimeOver;
     protected bool performCloseRangeAction;
-    public ChargeState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, D_ChargeState stateData) : base(etity, stateMachine, animBoolName)
+    public ChargeState(Entity entity, string animBoolName, D_ChargeState stateData) : base(entity, animBoolName)
     {
         this.stateData = stateData;
     }
@@ -35,11 +35,6 @@ public class ChargeState : State
         entity.SetVelocity(stateData.chargeSpeed);
     }
 
-    public override void Exit()
-    {
-        base.Exit();
-    }
-
     public override void LogicUpdate()
     {
         base.LogicUpdate();
@@ -48,11 +43,5 @@ public class ChargeState : State
         {
             isChargeTimeOver = true;
         }
-    }
-
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
-
     }
 }

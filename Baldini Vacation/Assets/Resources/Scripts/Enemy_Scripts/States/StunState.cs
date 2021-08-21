@@ -12,7 +12,7 @@ public class StunState : State
     protected bool isMovementStopped;
     protected bool performCloseRangeAction;
     protected bool isPlayerInMinAgroRange;
-    public StunState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, D_StunState stateData) : base(etity, stateMachine, animBoolName)
+    public StunState(Entity entity, string animBoolName, D_StunState stateData) : base(entity, animBoolName)
     {
         this.stateData = stateData;
     }
@@ -56,10 +56,5 @@ public class StunState : State
             isMovementStopped = true;
             entity.SetVelocity(0f);
         }
-    }
-
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
     }
 }

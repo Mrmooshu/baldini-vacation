@@ -2,19 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class State
-{
-    protected FiniteStateMachine stateMachine;
+public abstract class State {
     protected Entity entity;
-
     protected float startTime;
-
     protected string animBoolName;
 
-    public State(Entity etity, FiniteStateMachine stateMachine, string animBoolName)
+    public State(Entity entity, string animBoolName)
     {
-        this.entity = etity;
-        this.stateMachine = stateMachine;
+        this.entity = entity;
         this.animBoolName = animBoolName;
     }
 

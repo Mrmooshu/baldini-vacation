@@ -6,19 +6,9 @@ public class Crab_PlayerDetectedState : PlayerDetectedState
 {
 
     private Crab enemy;
-    public Crab_PlayerDetectedState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, D_PlayerDetected stateData, Crab enemy) : base(etity, stateMachine, animBoolName, stateData)
+    public Crab_PlayerDetectedState(Crab enemy, D_PlayerDetected stateData) : base(enemy, "playerDetected", stateData)
     {
         this.enemy = enemy;
-    }
-
-    public override void Enter()
-    {
-        base.Enter();
-    }
-
-    public override void Exit()
-    {
-        base.Exit();
     }
 
     public override void LogicUpdate()
@@ -27,16 +17,16 @@ public class Crab_PlayerDetectedState : PlayerDetectedState
 
         if (performCloseRangeAction)
         {
-            stateMachine.ChangeState(enemy.meleeAttackState);
+            enemy.stateMachine.ChangeState(enemy.meleeAttackState);
         }
 
         else if(!performLongRangeAction)
         {
-            stateMachine.ChangeState(enemy.chargeState);
+            enemy.stateMachine.ChangeState(enemy.chargeState);
         }
         else if(!isPlayerInMaxAgroRange)
         {
-            stateMachine.ChangeState(enemy.lookForPlayerState);
+            enemy.stateMachine.ChangeState(enemy.lookForPlayerState);
         }
 
     }

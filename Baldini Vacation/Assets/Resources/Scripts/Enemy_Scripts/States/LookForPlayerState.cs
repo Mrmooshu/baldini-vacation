@@ -14,7 +14,7 @@ public class LookForPlayerState : State
     protected float lastTurnTime;
 
     protected int amountOfTurnsDone;
-    public LookForPlayerState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, D_LookForPlayer stateData) : base(etity, stateMachine, animBoolName)
+    public LookForPlayerState(Entity entity, string animBoolName, D_LookForPlayer stateData) : base(entity, animBoolName)
     {
         this.stateData = stateData;
     }
@@ -38,11 +38,6 @@ public class LookForPlayerState : State
         amountOfTurnsDone = 0;
 
         entity.SetVelocity(0f);
-    }
-
-    public override void Exit()
-    {
-        base.Exit();
     }
 
     public override void LogicUpdate()
@@ -72,11 +67,6 @@ public class LookForPlayerState : State
         {
             isAllTurnsTimeDone = true;
         }
-    }
-
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
     }
 
     public void SetTurnImmediately(bool flip)

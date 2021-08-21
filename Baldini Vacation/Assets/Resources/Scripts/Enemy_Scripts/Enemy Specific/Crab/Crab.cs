@@ -37,14 +37,14 @@ public class Crab : Entity
     {
         base.Start();
 
-        moveState = new Crab_MoveState(this, stateMachine, "move", moveStateData, this);
-        idleState = new Crab_IdleState(this, stateMachine, "idle", idleStateData, this);
-        playerDetectedState = new Crab_PlayerDetectedState(this, stateMachine, "playerDetected", playerDetectedData, this);
-        chargeState = new Crab_ChargeState(this, stateMachine, "charge", chargeStateData, this);
-        lookForPlayerState = new Crab_LookForPlayerState(this, stateMachine, "lookForPlayer", lookForPlayerStateData, this);
-        meleeAttackState = new Crab_MeleeAttackState(this, stateMachine, "meleeAttack", meleeAttackPosition, meleeAttackStateData, this);
-        stunState = new Crab_StunState(this, stateMachine, "stun", stunStateData, this);
-        deadState = new Crab_DeadState(this, stateMachine, "dead", deadStateData, this);
+        moveState = new Crab_MoveState(this, moveStateData);
+        idleState = new Crab_IdleState(this, idleStateData);
+        playerDetectedState = new Crab_PlayerDetectedState(this, playerDetectedData);
+        chargeState = new Crab_ChargeState(this, chargeStateData);
+        lookForPlayerState = new Crab_LookForPlayerState(this, lookForPlayerStateData);
+        meleeAttackState = new Crab_MeleeAttackState(this, meleeAttackPosition, meleeAttackStateData);
+        stunState = new Crab_StunState(this, stunStateData);
+        deadState = new Crab_DeadState(this, deadStateData);
 
         stateMachine.Initialize(moveState);
     }
@@ -60,12 +60,12 @@ public class Crab : Entity
     {
         base.Damage(attackDetails);
 
-        if(isDead)
+        if(isDead && stateMachine.currentState != deadState)
         {
             stateMachine.ChangeState(deadState);
         }
 
-        else if(isStunned && stateMachine.currentState != stunState)
+        else if(isStunned && stateMachine.currentState != stunState && !isDead)
         {
             stateMachine.ChangeState(stunState);
         }

@@ -5,35 +5,17 @@ using UnityEngine;
 public class DeadState : State
 {
     protected D_DeadState stateData;
-    public DeadState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, D_DeadState stateData) : base(etity, stateMachine, animBoolName)
+    public DeadState(Entity entity, string animBoolName, D_DeadState stateData) : base(entity, animBoolName)
     {
         this.stateData = stateData;
-    }
-
-    public override void DoChecks()
-    {
-        base.DoChecks();
     }
 
     public override void Enter()
     {
         base.Enter();
+        entity.rb.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
+        entity.rb.gravityScale *= .5f;
 
-        entity.gameObject.SetActive(false);
-    }
-
-    public override void Exit()
-    {
-        base.Exit();
-    }
-
-    public override void LogicUpdate()
-    {
-        base.LogicUpdate();
-    }
-
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
+        //entity.gameObject.SetActive(false);
     }
 }

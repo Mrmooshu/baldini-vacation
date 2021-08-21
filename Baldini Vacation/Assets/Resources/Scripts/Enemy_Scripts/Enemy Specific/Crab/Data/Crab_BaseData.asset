@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d81e2f6797e96b64b8842fc21178335b, type: 3}
   m_Name: Crab_BaseData
   m_EditorClassIdentifier: 
-  maxHealth: 200
+  maxHealth: 30
   damageHopSpeed: 10
-  wallCheckDistance: 0.22
+  wallCheckDistance: 0.2
   ledgeCheckDistance: 0.4
   groundCheckRadius: 0.3
-  maxAgroDistance: 7
-  minAgroDistance: 8
+  maxAgroDistance: 4
+  minAgroDistance: 3
   stunResistance: 3
   stunRecoveryTime: 2
-  closeRangeActionDistance: 0.8
+  closeRangeActionDistance: 1
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256

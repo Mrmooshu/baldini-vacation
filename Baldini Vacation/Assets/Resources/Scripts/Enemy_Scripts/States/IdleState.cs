@@ -11,14 +11,13 @@ public class IdleState : State
     protected bool isPlayerInMinAgroRange;
 
     protected float idleTime;
-    public IdleState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, D_IdleState stateData) : base(etity, stateMachine, animBoolName)
+    public IdleState(Entity entity, string animBoolName, D_IdleState stateData) : base(entity, animBoolName)
     {
         this.stateData = stateData;
     }
 
     public override void DoChecks()
     {
-
         isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
 
         base.DoChecks();
@@ -50,11 +49,6 @@ public class IdleState : State
         {
             isIdleTimeOver = true;
         }
-    }
-
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
     }
 
     public void SetFlipAfterIdle(bool flip)

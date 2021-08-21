@@ -9,7 +9,7 @@ public class AttackState : State
     protected bool isAnimationFinished;
     protected bool isPlayerInMinAgroRange;
 
-    public AttackState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition) : base(etity, stateMachine, animBoolName)
+    public AttackState(Entity entity, string animBoolName, Transform attackPosition) : base(entity, animBoolName)
     {
         this.attackPosition = attackPosition;
     }
@@ -28,21 +28,6 @@ public class AttackState : State
         entity.atsm.attackState = this;
         isAnimationFinished = false;
         entity.SetVelocity(0f);
-    }
-
-    public override void Exit()
-    {
-        base.Exit();
-    }
-
-    public override void LogicUpdate()
-    {
-        base.LogicUpdate();
-    }
-
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
     }
 
     public virtual void TriggerAttack()
