@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class RangedAttackState : AttackState
 {
-    protected D_RangedAttackState stateData;
+    public GameObject shootingItem;
+    public Transform shootingPoint;
 
-    protected GameObject projectile;
-    protected Projectile projectileScript;
     public RangedAttackState(Entity entity, string animBoolName, Transform attackPosition, D_RangedAttackState stateData) : base(entity, animBoolName, attackPosition)
     {
-        this.stateData = stateData;
+        shootingItem = stateData.projectile;
+        shootingPoint = attackPosition;
     }
 
     public override void DoChecks()
@@ -47,8 +47,7 @@ public class RangedAttackState : AttackState
     {
         base.TriggerAttack();
 
-        projectile = GameObject.Instantiate(stateData.projectile, attackPosition.position, attackPosition.rotation);
-        projectileScript = projectile.GetComponent<Projectile>();
-        projectileScript.FireProjectile(stateData.projectileSpeed, stateData.projectileTravelDistance, stateData.projectileDamage);
+        GameObject bullet = GameObject.Instantiate(shootingItem, shootingPoint);
+        bullet.transform.parent = null;
     }
 }

@@ -13,7 +13,7 @@ public class DeadState : State
     public override void Enter()
     {
         base.Enter();
-        entity.rb.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
+        entity.rb.AddForce(new Vector2(0, 2), ForceMode2D.Impulse);
         entity.rb.gravityScale *= .5f;
 
         //entity.gameObject.SetActive(false);

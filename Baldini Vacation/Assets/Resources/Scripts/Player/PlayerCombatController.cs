@@ -9,7 +9,9 @@ public class PlayerCombatController : MonoBehaviour
     [SerializeField]
     private float inputTimer, attack1Radius, attack1Damage;
     [SerializeField]
-    private float stunDamageAmount = 1f;
+    private float stunDamageAmount;
+    [SerializeField]
+    private Vector2 knockbackForce;
     [SerializeField]
     private Transform attack1HitBoxPos;
     [SerializeField]
@@ -80,10 +82,6 @@ public class PlayerCombatController : MonoBehaviour
     {
         Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(attack1HitBoxPos.position, attack1Radius, whatIsDamageable);
 
-        attackDetails.damageAmount = attack1Damage;
-        attackDetails.position = transform.position;
-        attackDetails.stunDamageAmount = stunDamageAmount;
-
         foreach (Collider2D collider in detectedObjects)
         {
             collider.transform.parent.SendMessage("Damage", attackDetails);
@@ -100,20 +98,8 @@ public class PlayerCombatController : MonoBehaviour
 
     private void Damage(AttackDetails attackDetails)
     {
-        int direction;
-
         PS.DecreaseHealth(attackDetails.damageAmount);
-
-        if(attackDetails.position.x < transform.position.x)
-        {
-            direction = 1;
-        }
-        else
-        {
-            direction = -1;
-        }
-
-        PC.Knockback(direction);
+        PC.Knockback(attackDetails.knockbackForce, attackDetails.hitStun);
     }
 
     private void OnDrawGizmos()

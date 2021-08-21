@@ -15,9 +15,8 @@ public class newPlayerController : MonoBehaviour
     private float lastDash = -100f;
     private float wallCheckDistance;
     private float WALLCHECKSETDISTANCE = .3f;
-    private float knockbackStartTime;
+    private float hitStunTimer;
     [SerializeField]
-    private float knockbackDuration;
 
     private int amountOfJumpsLeft;
     private int facingDirection = 1;
@@ -34,11 +33,9 @@ public class newPlayerController : MonoBehaviour
     private bool canFlip;
     private bool hasWallJumped;
     private bool isDashing;
-    private bool knockback;
+    private bool hitStun;
 
     [SerializeField]
-    private Vector2 knockbackSpeed;
-
     private Rigidbody2D rb;
     private Animator anim;
 
@@ -112,19 +109,22 @@ public class newPlayerController : MonoBehaviour
         }
     }
 
-    public void Knockback (int direction)
+    public void Knockback (Vector2 direction, float stun)
     {
-        knockback = true;
-        knockbackStartTime = Time.time;
-        rb.velocity = new Vector2(knockbackSpeed.x * direction, knockbackSpeed.y);
+        hitStun = true;
+        rb.AddForce(direction, ForceMode2D.Impulse);
+        hitStunTimer = stun;
     }
 
     private void CheckKnockback()
     {
-        if(Time.time >= knockbackStartTime + knockbackDuration && knockback)
+        if(hitStunTimer <= 0)
         {
-            knockback = false;
-            rb.velocity = new Vector2(0.0f, rb.velocity.y);
+            hitStun = false;
+        }
+        else
+        {
+            hitStunTimer -= Time.deltaTime;
         }
     }
 
@@ -196,7 +196,7 @@ public class newPlayerController : MonoBehaviour
         anim.SetFloat("yVelocity", rb.velocity.y);
         anim.SetBool("isWallSliding", isWallSliding);
         anim.SetFloat("shotRecently", shotRecentlyTimer);
-        anim.SetBool("inHitStun", knockback);
+        anim.SetBool("inHitStun", hitStun);
     }
 
 
@@ -204,7 +204,7 @@ public class newPlayerController : MonoBehaviour
     {
         movementInputDirection = Input.GetAxisRaw("Horizontal");
 
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetButtonDown("Jump") && !hitStun)
         {
             if(isGrounded || (amountOfJumpsLeft > 0 && !isTouchingWall))
             {
@@ -378,11 +378,11 @@ public class newPlayerController : MonoBehaviour
 
     private void ApplyMovement()
     {
-        if (!isGrounded && !isWallSliding && movementInputDirection == 0 && !knockback)
+        if (!isGrounded && !isWallSliding && movementInputDirection == 0 && !hitStun)
         {
             rb.velocity = new Vector2(rb.velocity.x * airDragMultiplier, rb.velocity.y);
         }
-        else if (canMove && wallJumpTimer <= 0 && !knockback)
+        else if (canMove && wallJumpTimer <= 0 && !hitStun)
         {
             rb.velocity = new Vector2(movementSpeed * movementInputDirection, rb.velocity.y);
         }
@@ -410,7 +410,7 @@ public class newPlayerController : MonoBehaviour
 
     private void Flip()
     {
-        if (canFlip && !knockback)
+        if (canFlip && !hitStun)
         {
             facingDirection *= -1;
             Vector3 theScale = transform.localScale;

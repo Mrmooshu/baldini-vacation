@@ -13,6 +13,3 @@ MonoBehaviour:
   m_Name: MonkeySniper_RangedAttackStateData
   m_EditorClassIdentifier: 
   projectile: {fileID: 313538470064972347, guid: 9ad7a596018f98f41b7df5ca20d52a31, type: 3}
-  projectileDamage: 10
-  projectileSpeed: 25
-  projectileTravelDistance: 12

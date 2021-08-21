@@ -18,7 +18,8 @@ public class MeleeAttackState : AttackState
         base.Enter();
 
         attackDetails.damageAmount = stateData.attackDamage;
-        attackDetails.position = entity.aliveGO.transform.position;
+        attackDetails.knockbackForce = new Vector2(stateData.knockbackForce.x * entity.facingDirection, stateData.knockbackForce.y);
+        attackDetails.hitStun = stateData.hitStun;
     }
 
     public override void TriggerAttack()
