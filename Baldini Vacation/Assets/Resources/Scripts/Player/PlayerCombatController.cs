@@ -7,9 +7,11 @@ public class PlayerCombatController : MonoBehaviour
     [SerializeField]
     private bool combatEnabled;
     [SerializeField]
-    private float inputTimer, attack1Radius, attack1Damage;
+    private float inputTimer, attack1Radius;
     [SerializeField]
-    private float stunDamageAmount;
+    private int attack1Damage;
+    [SerializeField]
+    private float hitStun;
     [SerializeField]
     private Vector2 knockbackForce;
     [SerializeField]
@@ -34,6 +36,11 @@ public class PlayerCombatController : MonoBehaviour
         anim.SetBool("canAttack", combatEnabled);
         PC = GetComponent<newPlayerController>();
         PS = GetComponent<PlayerStats>();
+
+        attackDetails.knockbackForce = knockbackForce;
+        attackDetails.damageAmount = attack1Damage;
+        attackDetails.hitStun = hitStun;
+
     }
 
     private void Update()
@@ -84,7 +91,7 @@ public class PlayerCombatController : MonoBehaviour
 
         foreach (Collider2D collider in detectedObjects)
         {
-            collider.transform.parent.SendMessage("Damage", attackDetails);
+            collider.transform.SendMessage("Damage", attackDetails);
             //Instantiate hit particle
         }
     }

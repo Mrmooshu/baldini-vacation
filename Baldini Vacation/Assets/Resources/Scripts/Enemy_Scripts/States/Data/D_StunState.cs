@@ -6,8 +6,4 @@ using UnityEngine;
 public class D_StunState : ScriptableObject
 {
     public float stunTime = 3f;
-
-    public float stunKnockbackSpeed = 20f;
-    public float stunKnockbackTime = 0.2f;
-    public Vector2 stunKnockbackAngle;
 }

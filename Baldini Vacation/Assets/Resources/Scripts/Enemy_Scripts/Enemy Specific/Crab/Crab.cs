@@ -43,7 +43,7 @@ public class Crab : Entity
         chargeState = new Crab_ChargeState(this, chargeStateData);
         lookForPlayerState = new Crab_LookForPlayerState(this, lookForPlayerStateData);
         meleeAttackState = new Crab_MeleeAttackState(this, meleeAttackPosition, meleeAttackStateData);
-        stunState = new Crab_StunState(this, stunStateData);
+        stunState = new Crab_StunState(this);
         deadState = new Crab_DeadState(this, deadStateData);
 
         stateMachine.Initialize(moveState);
@@ -60,14 +60,20 @@ public class Crab : Entity
     {
         base.Damage(attackDetails);
 
-        if(isDead && stateMachine.currentState != deadState)
+        if (isDead)
         {
-            stateMachine.ChangeState(deadState);
+            if (stateMachine.currentState != deadState)
+            {
+                stateMachine.ChangeState(deadState);
+            }
         }
 
-        else if(isStunned && stateMachine.currentState != stunState && !isDead)
+        else if (isStunned)
         {
-            stateMachine.ChangeState(stunState);
+            if (stateMachine.currentState != stunState)
+            {
+                stateMachine.ChangeState(stunState);
+            }
         }
     }
 }

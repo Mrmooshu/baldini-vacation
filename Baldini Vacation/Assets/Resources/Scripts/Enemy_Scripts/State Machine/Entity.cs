@@ -12,7 +12,6 @@ public class Entity : MonoBehaviour
     public int facingDirection { get; private set; }
     public Rigidbody2D rb { get; private set; }
     public Animator anim { get; private set; }
-    public GameObject aliveGO { get; private set; }
     public AnimationToStateMachine atsm { get; private set; }
     public int lastDamageDirection { get; private set; }
 
@@ -36,16 +35,18 @@ public class Entity : MonoBehaviour
     protected bool isStunned;
     protected bool isDead;
 
+    //debug values
+    private string whatStateAmI;
+
     public virtual void Start()
     {
         hitStunTimer = 0;
         facingDirection = 1;
         currentHealth = entityData.maxHealth;
 
-        aliveGO = transform.Find("Alive").gameObject;
-        rb = aliveGO.GetComponent<Rigidbody2D>();
-        anim = aliveGO.GetComponent<Animator>();
-        atsm = aliveGO.GetComponent<AnimationToStateMachine>();
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        atsm = GetComponent<AnimationToStateMachine>();
 
         stateMachine = new FiniteStateMachine();
     }
@@ -62,7 +63,18 @@ public class Entity : MonoBehaviour
         }
         else if (hitStunTimer <= 0 && isStunned){
             isStunned = false;
+            stateMachine.returnToDefaultState();
         }
+
+        if (currentHealth <= 0 && !isDead)
+        {
+            isDead = true;
+            hitStunTimer = 0;
+            isStunned = false;
+        }
+
+        //used to debug current state
+        whatStateAmI = "" + stateMachine.currentState;
     }
 
     public virtual void FixedUpdate()
@@ -85,7 +97,7 @@ public class Entity : MonoBehaviour
 
     public virtual bool CheckWall()
     {
-        return Physics2D.Raycast(wallCheck.position, aliveGO.transform.right, entityData.wallCheckDistance, entityData.whatIsGround);
+        return Physics2D.Raycast(wallCheck.position, transform.right, entityData.wallCheckDistance, entityData.whatIsGround);
     }
 
     public virtual bool CheckLedge()
@@ -100,23 +112,17 @@ public class Entity : MonoBehaviour
 
     public virtual bool CheckPlayerInMinAgroRange()
     {
-        return Physics2D.Raycast(playerCheck.position, aliveGO.transform.right, entityData.minAgroDistance * facingDirection, entityData.whatIsPlayer);
+        return Physics2D.Raycast(playerCheck.position, transform.right, entityData.minAgroDistance * facingDirection, entityData.whatIsPlayer);
     }
 
     public virtual bool CheckPlayerInMaxAgroRange()
     {
-        return Physics2D.Raycast(playerCheck.position, aliveGO.transform.right, entityData.maxAgroDistance * facingDirection, entityData.whatIsPlayer);
+        return Physics2D.Raycast(playerCheck.position, transform.right, entityData.maxAgroDistance * facingDirection, entityData.whatIsPlayer);
     }
 
     public virtual bool CheckPlayerInCloseRangeAction()
     {
-        return Physics2D.Raycast(playerCheck.position, aliveGO.transform.right, entityData.closeRangeActionDistance * facingDirection, entityData.whatIsPlayer);
-    }
-
-    public virtual void DamageHop(float velocity)
-    {
-        velocityWorkspace.Set(rb.velocity.x, velocity);
-        rb.velocity = velocityWorkspace;
+        return Physics2D.Raycast(playerCheck.position, transform.right, entityData.closeRangeActionDistance * facingDirection, entityData.whatIsPlayer);
     }
 
     public virtual void Damage(AttackDetails attackDetails)
@@ -125,19 +131,18 @@ public class Entity : MonoBehaviour
 
         hitStunTimer = attackDetails.hitStun;
 
-        Instantiate(entityData.hitParticle, aliveGO.transform.position, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
+        isStunned = true;
 
-        if(currentHealth <= 0)
-        {
-            isDead = true;
-        }
+        rb.AddForce(attackDetails.knockbackForce, ForceMode2D.Impulse);
+
+        Instantiate(entityData.hitParticle, transform.position, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
     }    
     public virtual void Flip()
     {
         facingDirection *= -1;
-        Vector3 theScale = aliveGO.transform.localScale;
+        Vector3 theScale = transform.localScale;
         theScale.x *= -1;
-        aliveGO.transform.localScale = theScale;
+        transform.localScale = theScale;
     }
 
     public virtual void OnDrawGizmos()

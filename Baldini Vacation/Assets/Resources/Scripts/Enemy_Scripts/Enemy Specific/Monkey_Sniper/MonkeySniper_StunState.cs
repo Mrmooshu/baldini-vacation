@@ -6,7 +6,7 @@ public class MonkeySniper_StunState : StunState
 {
 
     private MonkeySniper enemy;
-    public MonkeySniper_StunState(MonkeySniper enemy, D_StunState stateData) : base(enemy, "stun", stateData)
+    public MonkeySniper_StunState(MonkeySniper enemy) : base(enemy, "stun")
     {
         this.enemy = enemy;
     }
@@ -29,18 +29,6 @@ public class MonkeySniper_StunState : StunState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-
-        if(isStunTimeOver)
-        {
-            if(isPlayerInMinAgroRange)
-            {
-                enemy.stateMachine.ChangeState(enemy.playerDetectedState);
-            }
-            else
-            {
-                enemy.stateMachine.ChangeState(enemy.lookForPlayerState);
-            }
-        }
     }
 
     public override void PhysicsUpdate()

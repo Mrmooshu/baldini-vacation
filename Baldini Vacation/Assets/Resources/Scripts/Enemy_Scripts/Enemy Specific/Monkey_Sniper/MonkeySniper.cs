@@ -36,6 +36,7 @@ public class MonkeySniper : Entity
     private Transform meleeAttackPosition;
     [SerializeField]
     private Transform rangedAttackPosition;
+
     public override void Start()
     {
         base.Start();
@@ -45,7 +46,7 @@ public class MonkeySniper : Entity
         playerDetectedState = new MonkeySniper_PlayerDetectedState(this, playerDetectedStateData);
         meleeAttackState = new MonkeySniper_MeleeAttackState(this, meleeAttackPosition, meleeAttackStateData);
         lookForPlayerState = new MonkeySniper_LookForPlayerState(this, lookForPlayerStateData);
-        stunState = new MonkeySniper_StunState(this, stunStateData);
+        stunState = new MonkeySniper_StunState(this);
         deadState = new MonkeySniper_DeadState(this, deadStateData);
         dodgeState = new MonkeySniper_DodgeState(this, dodgeStateData);
         rangedAttackState = new MonkeySniper_RangedAttackState(this, rangedAttackPosition, rangedAttackStateData);
@@ -59,21 +60,18 @@ public class MonkeySniper : Entity
 
         if (isDead)
         {
-            stateMachine.ChangeState(deadState);
+            if (stateMachine.currentState != deadState)
+            {
+                stateMachine.ChangeState(deadState);
+            }
         }
 
-        if (isStunned && stateMachine.currentState != stunState)
+        else if (isStunned)
         {
-            stateMachine.ChangeState(stunState);
-        }
-        else if(CheckPlayerInMinAgroRange())
-        {
-            stateMachine.ChangeState(rangedAttackState);
-        }
-        else if (!CheckPlayerInMinAgroRange())
-        {
-            lookForPlayerState.SetTurnImmediately(true);
-            stateMachine.ChangeState(lookForPlayerState);
+            if (stateMachine.currentState != stunState)
+            {
+                stateMachine.ChangeState(stunState);
+            }
         }
     }
 
