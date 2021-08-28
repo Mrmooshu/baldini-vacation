@@ -27,6 +27,19 @@ public class MoveState : State
     public override void Enter()
     {
         base.Enter();
-        entity.SetVelocity(stateData.movementSpeed);
+    }
+
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
+
+        if (entity.CheckWall())
+        {
+            entity.Flip();
+        }
+        else
+        {
+            entity.transform.position += new Vector3(stateData.movementSpeed * entity.facingDirection * Time.deltaTime, 0f, 0f);
+        }
     }
 }

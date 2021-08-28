@@ -147,9 +147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79cb33169c09c440b4a280b4462be6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
-  hitStun: 0.3
-  knockbackForce: {x: 3, y: 6}
+  damage: 3
+  hitStun: 0
+  knockbackForce: {x: 0, y: 0}
   speed: 10
   senderTag: 
   targetTag: 

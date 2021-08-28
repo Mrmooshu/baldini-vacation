@@ -25,8 +25,6 @@ public class Entity : MonoBehaviour
     private Transform groundCheck;
 
     private float currentHealth;
-    private float currentStunResistance;
-    private float lastDamageTime;
 
     private Vector2 velocityWorkspace;
 
@@ -97,7 +95,7 @@ public class Entity : MonoBehaviour
 
     public virtual bool CheckWall()
     {
-        return Physics2D.Raycast(wallCheck.position, transform.right, entityData.wallCheckDistance, entityData.whatIsGround);
+        return Physics2D.Raycast(wallCheck.position, transform.right, entityData.wallCheckDistance * facingDirection, entityData.whatIsGround);
     }
 
     public virtual bool CheckLedge()
@@ -131,9 +129,12 @@ public class Entity : MonoBehaviour
 
         hitStunTimer = attackDetails.hitStun;
 
-        isStunned = true;
+        if (hitStunTimer > 0)
+        {
+            isStunned = true;
+        }
 
-        rb.AddForce(attackDetails.knockbackForce, ForceMode2D.Impulse);
+        rb.velocity = attackDetails.knockbackForce;
 
         Instantiate(entityData.hitParticle, transform.position, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
     }    

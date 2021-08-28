@@ -21,7 +21,7 @@ public abstract class Projectile : MonoBehaviour
         attackDetails.hitStun = hitStun;
     }
 
-    private void Update()
+    public virtual void Update()
     {
         transform.Translate(transform.right * transform.localScale.x * speed * Time.deltaTime);
         if (Vector2.Distance(player.transform.position, transform.position) > 50)
@@ -30,10 +30,11 @@ public abstract class Projectile : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == targetTag)
         {
+            attackDetails.knockbackForce.x *= transform.localScale.x;
             collision.transform.SendMessage("Damage", attackDetails);
             Destroy(gameObject);
         }
