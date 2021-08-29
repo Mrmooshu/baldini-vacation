@@ -26,6 +26,7 @@ public class PlayerCombatController : MonoBehaviour
     private AttackDetails attackDetails;
 
     private Animator anim;
+    private FlashEffect flashEffect;
 
     private newPlayerController PC;
     private PlayerStats PS;
@@ -36,6 +37,7 @@ public class PlayerCombatController : MonoBehaviour
         anim.SetBool("canAttack", combatEnabled);
         PC = GetComponent<newPlayerController>();
         PS = GetComponent<PlayerStats>();
+        flashEffect = GetComponent<FlashEffect>();
 
         attackDetails.knockbackForce = knockbackForce;
         attackDetails.damageAmount = attack1Damage;
@@ -91,6 +93,7 @@ public class PlayerCombatController : MonoBehaviour
 
         foreach (Collider2D collider in detectedObjects)
         {
+            attackDetails.knockbackForce.x *= this.transform.localScale.x;
             collider.transform.SendMessage("Damage", attackDetails);
             //Instantiate hit particle
         }
@@ -107,6 +110,7 @@ public class PlayerCombatController : MonoBehaviour
     {
         PS.DecreaseHealth(attackDetails.damageAmount);
         PC.Knockback(attackDetails.knockbackForce, attackDetails.hitStun);
+        flashEffect.Flash(new Color(1, 1, 1, 1));
     }
 
     private void OnDrawGizmos()

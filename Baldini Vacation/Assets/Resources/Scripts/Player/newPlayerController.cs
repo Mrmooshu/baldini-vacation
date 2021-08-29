@@ -19,7 +19,7 @@ public class newPlayerController : MonoBehaviour
     [SerializeField]
 
     private int amountOfJumpsLeft;
-    private int facingDirection = 1;
+    private int facingDirection;
     private int lastWallJumpDirection;
 
     private bool isRunning;
@@ -70,6 +70,7 @@ public class newPlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         amountOfJumpsLeft = amountOfJumps;
         wallJumpDirection.Normalize();
+        facingDirection = (int)transform.localScale.x;
     }
 
     void Update()

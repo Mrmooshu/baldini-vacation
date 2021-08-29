@@ -14,6 +14,7 @@ public class Entity : MonoBehaviour
     public Animator anim { get; private set; }
     public AnimationToStateMachine atsm { get; private set; }
     public int lastDamageDirection { get; private set; }
+    public FlashEffect flashEffect { get; private set; }
 
     [SerializeField]
     private Transform wallCheck;
@@ -45,6 +46,7 @@ public class Entity : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         atsm = GetComponent<AnimationToStateMachine>();
+        flashEffect = GetComponent<FlashEffect>();
 
         stateMachine = new FiniteStateMachine();
     }
@@ -68,7 +70,6 @@ public class Entity : MonoBehaviour
         {
             isDead = true;
             hitStunTimer = 0;
-            isStunned = false;
         }
 
         //used to debug current state
@@ -133,11 +134,17 @@ public class Entity : MonoBehaviour
         {
             isStunned = true;
         }
-
-        rb.velocity = attackDetails.knockbackForce;
+        if (currentHealth <= 0)
+        {
+            attackDetails.knockbackForce *= new Vector2(.5f, .5f);
+        }
+        rb.AddForce(attackDetails.knockbackForce, ForceMode2D.Impulse);
 
         Instantiate(entityData.hitParticle, transform.position, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
+
+        flashEffect.Flash(new Color(1, 1, 1, 1));
     }    
+
     public virtual void Flip()
     {
         facingDirection *= -1;

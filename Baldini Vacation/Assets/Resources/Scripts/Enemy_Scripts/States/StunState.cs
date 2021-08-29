@@ -21,10 +21,21 @@ public class StunState : State
     public override void Exit()
     {
         base.Exit();
+        entity.rb.velocity = Vector2.zero;
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+    }
+
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
+
+        if (entity.CheckGround())
+        {
+            entity.rb.velocity = new Vector2(entity.rb.velocity.x * 0.9f, entity.rb.velocity.y);
+        }
     }
 }
