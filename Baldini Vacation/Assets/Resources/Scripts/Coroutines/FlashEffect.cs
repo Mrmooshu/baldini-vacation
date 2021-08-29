@@ -7,9 +7,12 @@ public class FlashEffect : MonoBehaviour
     private SpriteRenderer sprite;
     private Material defaultMat;
     private Coroutine flashRoutine;
+    private float durationTimer;
 
     [SerializeField]
     private Material flashMat;
+    private float flashDuration = 0.1f;
+    private float totalDuration = 0.1f;
 
     void Start()
     {
@@ -29,13 +32,21 @@ public class FlashEffect : MonoBehaviour
 
     private IEnumerator FlashRoutine(Color color)
     {
-        sprite.material = flashMat;
+        durationTimer = totalDuration;
+        while (durationTimer >= 0)
+        {
+            sprite.material = flashMat;
 
-        flashMat.color = color;
+            flashMat.color = color;
 
-        yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(flashDuration);
 
-        sprite.material = defaultMat;
+            sprite.material = defaultMat;
+
+            yield return new WaitForSeconds(flashDuration);
+
+            durationTimer -= flashDuration * 2;
+        }
 
         flashRoutine = null;
     }
