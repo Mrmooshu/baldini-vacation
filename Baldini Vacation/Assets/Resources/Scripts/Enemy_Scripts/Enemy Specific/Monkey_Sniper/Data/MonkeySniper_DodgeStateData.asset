@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc7460bf21f0884d8897e85035413e9, type: 3}
   m_Name: MonkeySniper_DodgeStateData
   m_EditorClassIdentifier: 
-  dodgeSpeed: 15
+  dodgeSpeed: 5
   dodgeTime: 0.2
   dodgeCooldown: 2
   dodgeAngle: {x: 1, y: 1}
