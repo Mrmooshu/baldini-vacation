@@ -14,7 +14,7 @@ public class D_Entity : ScriptableObject
     public float ledgeCheckDistance = 0.4f;
     public float groundCheckRadius = 0.3f;
 
-    public float maxAgroDistance = 4f;
+    public float maxAgroDistance = 8f;
     public float minAgroDistance = 3f;
 
     public float stunResistance = 3f;
