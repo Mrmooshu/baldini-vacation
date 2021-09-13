@@ -12,7 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e639773b1acb9c44bb11bf158693ff7, type: 3}
   m_Name: MonkeySniper_StunStateData
   m_EditorClassIdentifier: 
-  stunTime: 3
-  stunKnockbackSpeed: 20
-  stunKnockbackTime: 0.2
-  stunKnockbackAngle: {x: 10, y: 10}
+  stunTime: 5

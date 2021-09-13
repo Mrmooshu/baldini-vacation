@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MonkeySniper_DodgeStateData
   m_EditorClassIdentifier: 
   dodgeSpeed: 5
-  dodgeTime: 0.2
+  dodgeTime: 0.5
   dodgeCooldown: 2
-  dodgeAngle: {x: 1, y: 1}
+  dodgeAngle: {x: 2, y: 2}
